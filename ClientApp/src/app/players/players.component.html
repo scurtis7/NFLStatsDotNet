@@ -1,3 +1,35 @@
 <div>
   <h1><span class="badge badge-info">Players</span></h1>
+  <div>
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Team</th>
+        <th scope="col">Jersey</th>
+        <th scope="col">Active</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">College</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{player.playerId}}</td>
+        <td>{{player.displayName}}</td>
+        <td>{{player.position}}</td>
+        <td>{{player.height}}</td>
+        <td>{{player.weight}}</td>
+        <td>{{player.team}}</td>
+        <td>{{player.jersey}}</td>
+        <td>{{player.active}}</td>
+        <td>{{player.dob}}</td>
+        <td>{{player.college}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NflPlayer} from '../model/nfl-player';
+import {NflstatsService} from '../service/nflstats.service';
 
 @Component({
   selector: 'app-players',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
-  constructor() { }
+  players: NflPlayer[];
+
+  constructor(private nflStatsService: NflstatsService) { }
 
   ngOnInit() {
+    this.nflStatsService.getPlayers()
+      .subscribe(result => this.players = result.players);
   }
 
 }
